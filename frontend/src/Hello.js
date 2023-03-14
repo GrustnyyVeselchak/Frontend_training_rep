@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState} from "react";
 import axios from 'axios';
 
-import Alert from '@mui/material/Alert'
+import { Container, Alert } from "@mui/material";
 
 export default function Hello(props) {
     const [hello, setHello] = useState()
@@ -21,9 +21,9 @@ export default function Hello(props) {
         });
     
     return(
-        <div>
+        <Container maxWidth="sm">
             <Alert variant="filled" severity="warning">Loading....</Alert>
             <Alert variant="filled" severity="success">{hello}</Alert>
-        </div>
+        </Container>     
         );
 }
