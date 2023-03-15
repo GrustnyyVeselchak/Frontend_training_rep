@@ -1,5 +1,7 @@
 import React from "react";
-import { Container,Grid, Avatar, Link, Typography } from "@mui/material";
+import { Container, Box, Grid, Avatar, Link, Typography, } from "@mui/material";
+
+
 
 export default function Personal(props) {
     return(
@@ -10,14 +12,23 @@ export default function Personal(props) {
                     justifyContent="center"
                     alignItems="center"
                     >
-                    <Avatar src ="./logo.png"
-                        sx={{
-                            mt: 10,
-                            mb: 3, 
-                            width: 400, 
-                            height: 400 
-                        }}/>
-                    <Typography sx={{color: "white", }} variant="h2">GrustnyyVeselchak</Typography>
+                    <Box sx={{
+                        mt: 5,
+                        mb: 5, 
+                        border: 2,
+                        borderRadius: '50%',
+                        borderColor: 'grey.500',
+                        boxShadow: 10,
+                         }}>
+                        <Avatar src ="./logo.png"
+                            sx={{
+                                borderColor: 'white', 
+                                width: 400, 
+                                height: 400 
+                            }}/>
+                    </Box>
+                    
+                    <Typography sx={{color: "white"}} variant="h2">Grustnyy Veselchak</Typography>
                     <Link href="https://github.com/GrustnyyVeselchak" >
                         <Typography variant="h5">My GitHub</Typography>
                     </Link> 
