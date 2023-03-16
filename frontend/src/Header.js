@@ -5,16 +5,13 @@ export default function Header() {
     return(
         <Box>
             <Container sx={{ gridArea: 'header'}}>
-                <Grid 
-                    container
+                <Grid container
                     direction="row"
-                    justifyContent="space-between"
+                    justifyContent="flex-end"
                     alignItems="center"
-                    sx = {{color: 'white'}}>
-                    <Grid item xs={2}>
-                        <h1></h1>
-                    </Grid>
-                        
+                    sx = {{color: 'white'}}
+                    spacing={26}>
+
                     <Grid item>
                         <h1>Навигация</h1>
                     </Grid>

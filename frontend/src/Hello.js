@@ -35,10 +35,9 @@ export default function Hello(props) {
         <Container maxWidth="sm">
             <Snackbar 
                 open={open} 
-                autoHideDuration={1000} 
+                autoHideDuration={3000} 
                 onClose={handleClose} 
-                anchorOrigin={{ vertical:'top', horizontal: 'left',  }}
-                sx = {{tm: '10px'}}> 
+                anchorOrigin={{ vertical:'top', horizontal: 'left',  }}> 
                 {hello ? 
                         <Alert 
                             variant="filled" 

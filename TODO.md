@@ -27,6 +27,7 @@ ALL NEW COMPONENTS YOU MAKE SHOULD BE IMPORTED TO App.js FUNCTION, AND SHOULD HA
         my_rating: "9/10"
     }
     </pre>
+    https://www.youtube.com/watch?v=C-AFpwNrPRU
     # 10 минут Алексеевских
 5. Make a SubmitEmail.js, and SubmitEmail component.
     - details: USE AXIOS FOR THIS TASK; user should input his email, and it should be submitted to the route (see REST_API.md), also, then message from response should be displayed, like: Successfully submitted email: {message}. Also, if something goes wrong, error message should be made, and displayed. 
