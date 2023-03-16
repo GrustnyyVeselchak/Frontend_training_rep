@@ -11,9 +11,11 @@ ALL NEW COMPONENTS YOU MAKE SHOULD BE IMPORTED TO App.js FUNCTION, AND SHOULD HA
 3. Make a Hello.js file, and make Hello component. 
     - details: Make a request to backend (when initialization, better use useEffect() function from react) to get message. To see route you should make request to, check out REST_API.md. When backend is not accessible, not running, message should be "Loading..." instead of the message you get from backend 
     # Материалы
-    use useEffect and useState: https://www.youtube.com/watch?v=wYvIM1SU1hw&t=345s&ab_channel=Ateros
+    useEffect and useState: https://www.youtube.com/watch?v=wYvIM1SU1hw&t=345s&ab_channel=Ateros
     axios: https://www.youtube.com/watch?v=fDVhl3DGkD0
     Error: https://www.youtube.com/watch?v=0YwYEOpq9q0&ab_channel=CalebCurry
+    conditional: https://www.youtube.com/watch?v=hzB0CvJANn8&ab_channel=%D0%A8%D0%BA%D0%BE%D0%BB%D0%B0web-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8FConstcode
+    snakbar: https://www.youtube.com/watch?v=v6q0d5AvpXc&ab_channel=WebOutSource
     # 15 минут Алексеевских
 4. Make a SearchBar.js file, and make SearchBar component, also make searchInfo.js file which will contain javascript object, and which you will use to obtain information from.
     - details: SearchBar component should map from object(s) in searchInfo.js file, it should return either item from object or nothing (because, it doesn't exist in searchInfo.js file). Write films you like in searchInfo.js, so, it should look like (it should contain name of film, and year!):
