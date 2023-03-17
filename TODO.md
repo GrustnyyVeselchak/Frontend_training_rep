@@ -38,4 +38,5 @@ ALL NEW COMPONENTS YOU MAKE SHOULD BE IMPORTED TO App.js FUNCTION, AND SHOULD HA
 7. Make a Header.js and a Header component.
     - details: this component should display navigation for the page, when you click, you should be taken to the part of site you want.
     - additionally: should display login or account depends on what props is given to the component. If user then display account, if guest then display login
+    NavigationBar: https://www.youtube.com/watch?v=bdOHxlrS5UM&ab_channel=TovCode
     # 10 минут Алексевских

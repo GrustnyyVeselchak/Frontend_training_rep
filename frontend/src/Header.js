@@ -1,25 +1,57 @@
-import { Box, Container, Grid } from "@mui/material";
+import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
+import {BrowserRouter} from "react-router-dom"
+import {HashLink as Link} from "react-router-hash-link"
 
-export default function Header() {
+
+export default function Header(props) {
     return(
-        <Box>
-            <Container sx={{ gridArea: 'header'}}>
-                <Grid container
-                    direction="row"
-                    justifyContent="flex-end"
-                    alignItems="center"
-                    sx = {{color: 'white'}}
-                    spacing={26}>
+        <Box sx={{
+                bgcolor: "black",
+                pt: "20px",
+                
+                
+                }}>
+            <Container 
+                maxWidth="md"
+                sx={{    
+                gridArea: 'header',
+                borderBottom: 1,
+                borderColor: 'grey.500',
+                pb: "20px",
+            }}>
+                <BrowserRouter>
+                    <Grid container
+                        direction="row"
+                        justifyContent="space-between"
+                        alignItems="center"
+                        sx = {{color: 'white'}}
+                        >
 
-                    <Grid item>
-                        <h1>Навигация</h1>
+                        <Grid item>
+                            <Link to="#Personal" sx={{color: "white", underline: "none"}}>
+                                <Typography sx={{color: "white"}}>
+                                    Personal
+                                </Typography>
+                            </Link>
+                        </Grid>
+
+                        <Grid item>
+                            <Link to="#ListOfFilms">
+                                <Typography>
+                                    List of films
+                                </Typography>
+                            </Link>
+                        </Grid>
+                                                    
+                        <Grid item>
+                            <Typography>
+                                Пользователь
+                            </Typography>
+                        </Grid>
                     </Grid>
-                        
-                    <Grid item>
-                        <h1>Пользователь</h1>
-                    </Grid>
-                </Grid>
+                </BrowserRouter>
+                
             </Container>
         </Box>
     )

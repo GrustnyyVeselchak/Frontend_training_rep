@@ -1,5 +1,4 @@
-export const searchInfo = { 
-    films: [
+export const searchInfo = [
     {
         name: "Lord of the Rings: The Fellowship of the Ring",
         year: 2001,
@@ -46,9 +45,5 @@ export const searchInfo = {
         name: "Lord of the Rings: The Fellowship of the Ring",
         year: 2001,
         my_rating: "9/10"
-    }, 
-
-    
+    }  
 ]
-
-}
