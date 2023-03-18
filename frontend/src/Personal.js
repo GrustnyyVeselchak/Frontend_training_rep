@@ -23,7 +23,7 @@ export default function Personal(props) {
                         borderColor: 'grey.500',
                         boxShadow: 10,
                             }}>
-                                <Avatar src ="./logo2.png"
+                                <Avatar src ="./logo.png"
                                     sx={{
                                         borderColor: 'white', 
                                         width: 400, 
