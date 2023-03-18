@@ -3,7 +3,7 @@ import MainWrapper from "./MainWrapper";
 import Hello from "./Hello";
 import Personal from "./Personal";
 import Header from "./Header";
-import ListOfFilms from "./ListOfFilms";
+import SearchBar from "./SearchBar";
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
       <MainWrapper/>
         <Hello/>
         <Personal/>
-        <ListOfFilms/>
+        <SearchBar/>
       <MainWrapper/>
     </div>
   );

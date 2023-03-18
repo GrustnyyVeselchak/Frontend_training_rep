@@ -1,33 +1,38 @@
-import { Autocomplete, Grid, Box } from "@mui/material";
+import { Grid, Box, TableContainer, Table, TableHead, TableBody, TableRow, TableCell, Paper}  from "@mui/material";
 import { Container } from "@mui/system";
 import SearchIcon from '@mui/icons-material/Search';
-import React from "react";
+import {React, useState} from "react";
 import './SearchBar.css'
+import { searchInfo } from "./searchInfo";
 
-
-
-
-export default function SearchBar({data, placeholder}) {
+export default function SearchBar(props) {
+  const[query, setQuery] = useState("")
   return (
-    <Container maxWidth="md"
-    >
-    <Box>
+    <Box id="ListOfFilms"
+            sx={{
+                bgcolor: 'black',
+                height: '800px'
+            }}>
+              <Container maxWidth="md">
       <Grid container
             direction="row"
             justifyContent="space-between"
             alignItems="center"
+            sx={{
+              color: "white", 
+              borderBottom: 1, 
+              borderColor: 'grey.500',
+              pb: "5px"
+              }}
       >
         <Grid item className="search">
-            <Autocomplete
-                id="custom-input-demo"
-                options={data}
-                getOptionLabel={(option) => option.name}
-                renderInput={(params) => (
-                  <div ref={params.InputProps.ref}>
-                    <input type="text" {...params.inputProps} placeholder={placeholder} autoFocus="true"/>
+                  <div>
+                    <input 
+                      type="text" 
+                      placeholder="Search..." 
+                      autoFocus="true"
+                      onChange={(e)=> setQuery(e.target.value)}/>
                   </div>
-                )}>
-          </Autocomplete>
         </Grid>
 
         <Grid item>
@@ -38,81 +43,32 @@ export default function SearchBar({data, placeholder}) {
               }}/>
         </Grid>
       </Grid> 
-    </Box>
     </Container>
+    <Container maxWeigh="sm" sx={{pt: "50px"}}>
+                    <TableContainer componet = {Paper} sx = {{mt: "50px", color: "white"}} >
+                        <Table aria-label = 'simple table'sx = {{color: "white"}}>
+                            <TableHead>
+                                <TableRow>
+                                    <TableCell sx = {{color: "white"}}>Name</TableCell>
+                                    <TableCell sx = {{color: "white"}}>year</TableCell>
+                                    <TableCell align="center" sx = {{color: "white"}}>My rating</TableCell>
+                                </TableRow>
+                            </TableHead>
+
+                            <TableBody> 
+                                {searchInfo.filter(film=>
+                                    film.name.includes(query)).map((film)=>(
+                                    <TableRow key={film.name}>
+                                        <TableCell sx = {{color: "white"}}>{film.name}</TableCell>
+                                        <TableCell sx = {{color: "white"}}>{film.year}</TableCell>
+                                        <TableCell align="center" sx = {{color: "white"}}>{film.my_rating}</TableCell>
+                                    </TableRow>
+                                ))}
+                             </TableBody>
+                        </Table>
+                    </TableContainer>
+                </Container>
+    </Box>
+    
   )
 }
-
-
-/*import * as React from 'react';
-import { searchInfo } from './searchInfo';
-
-import { styled, alpha } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import InputBase from '@mui/material/InputBase';
-import SearchIcon from '@mui/icons-material/Search';
-
-
-
-const Search = styled('div')(({ theme }) => ({
-  position: 'relative',
-  borderRadius: theme.shape.borderRadius,
-  backgroundColor: alpha(theme.palette.common.white, 0.15),
-  '&:hover': {
-    backgroundColor: alpha(theme.palette.common.white, 0.25),
-  },
-  marginLeft: 0,
-  width: '100%',
-  [theme.breakpoints.up('sm')]: {
-    marginLeft: theme.spacing(1),
-    width: 'auto',
-  },
-}));
-
-const SearchIconWrapper = styled('div')(({ theme }) => ({
-  padding: theme.spacing(0, 2),
-  height: '100%',
-  position: 'absolute',
-  pointerEvents: 'none',
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-}));
-
-const StyledInputBase = styled(InputBase)(({ theme }) => ({
-  color: 'inherit',
-  '& .MuiInputBase-input': {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-    transition: theme.transitions.create('width'),
-    width: '100%',
-    [theme.breakpoints.up('sm')]: {
-      width: '12ch',
-      '&:focus': {
-        width: '20ch',
-      },
-    },
-  },
-}));
-
-export default function SearchAppBar(pro) {
-
-    
-  return (
-    <Box sx={{ flexGrow: 16 }}>
-          
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
-
-         
-    </Box>
-  );
-}*/
