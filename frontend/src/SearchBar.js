@@ -1,4 +1,50 @@
-import * as React from 'react';
+import { Autocomplete, Grid, Box } from "@mui/material";
+import { Container } from "@mui/system";
+import SearchIcon from '@mui/icons-material/Search';
+import React from "react";
+import './SearchBar.css'
+
+
+
+
+export default function SearchBar({data, placeholder}) {
+  return (
+    <Container maxWidth="md"
+    >
+    <Box>
+      <Grid container
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+      >
+        <Grid item className="search">
+            <Autocomplete
+                id="custom-input-demo"
+                options={data}
+                getOptionLabel={(option) => option.name}
+                renderInput={(params) => (
+                  <div ref={params.InputProps.ref}>
+                    <input type="text" {...params.inputProps} placeholder={placeholder} autoFocus="true"/>
+                  </div>
+                )}>
+          </Autocomplete>
+        </Grid>
+
+        <Grid item>
+          <SearchIcon className="icon"
+            sx={{
+              bgcolor: "black",
+              color: "white",
+              }}/>
+        </Grid>
+      </Grid> 
+    </Box>
+    </Container>
+  )
+}
+
+
+/*import * as React from 'react';
 import { searchInfo } from './searchInfo';
 
 import { styled, alpha } from '@mui/material/styles';
@@ -69,4 +115,4 @@ export default function SearchAppBar(pro) {
          
     </Box>
   );
-}
+}*/

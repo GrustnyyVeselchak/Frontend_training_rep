@@ -27,6 +27,8 @@ ALL NEW COMPONENTS YOU MAKE SHOULD BE IMPORTED TO App.js FUNCTION, AND SHOULD HA
         my_rating: "9/10"
     }
     </pre>
+    https://www.youtube.com/watch?v=dywrkwjCJBw&t=246s&ab_channel=TipsByAnil
+    https://www.youtube.com/watch?v=MY6ZZIn93V8&t=129s&ab_channel=LamaDev
     https://www.youtube.com/watch?v=C-AFpwNrPRU
     # 10 минут Алексеевских
 5. Make a SubmitEmail.js, and SubmitEmail component.
