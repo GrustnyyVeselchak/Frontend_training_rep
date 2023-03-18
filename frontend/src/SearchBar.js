@@ -63,9 +63,9 @@ export default function SearchBar(props) {
                 {searchInfo.filter(film=>
                 film.name.includes(query)).map((film)=>(
                   <TableRow key={film.name}>
-                  <TableCell sx = {{color: "white"}}>{film.name}</TableCell>
-                  <TableCell sx = {{color: "white"}}>{film.year}</TableCell>
-                  <TableCell align="center" sx = {{color: "white"}}>{film.my_rating}</TableCell>
+                    <TableCell sx = {{color: "white"}}>{film.name}</TableCell>
+                    <TableCell sx = {{color: "white"}}>{film.year}</TableCell>
+                    <TableCell align="center" sx = {{color: "white"}}>{film.my_rating}</TableCell>
                   </TableRow>
                   ))}
               </TableBody>
