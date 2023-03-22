@@ -3,33 +3,34 @@ import axios from "axios";
 
 
 export default function SumbitEmail(props) {
-    const [email, setEmail] = useState({
-        email: ''
-    })
+    const [email, setEmail] = useState('');
+
     const handleInput = (event) => {
-        setEmail({...email, [event.tartget.name]: event.tartget.value})
+        setEmail(event.tartget.value)
     }
 
-    function handleSubmit(event) {
+    const handleSubmit = async (event) => {
         event.preventDefault()
-        console.log(email)
         axios
-            .post(`/api/submit/:email`, {email})
+            .post(`/api/submit/${email}`)
             .then(response=>{
                 console.log(response);
             })
+            /*
             .catch(error => {
                 console.log(error);
             })
+            */
     }
 
     return(
         <div>
             <form onSubmit={handleSubmit}>
-                email: <input
-                    type="text"
-                    onChange={handleInput}
+                <input
+                    type="email"
+                    value={email}
                     name="email"
+                    onChange={handleInput}
                     /> 
                 <input
                     type="submit"/>
