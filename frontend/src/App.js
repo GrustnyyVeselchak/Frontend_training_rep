@@ -10,11 +10,11 @@ function App() {
   return (
     <div>
       <Header/>
-      <MainWrapper/>
+      <MainWrapper>
         <Hello/>
         <Personal/>
         <SearchBar/>
-      <MainWrapper/>
+      </MainWrapper>
     </div>
   );
 }
