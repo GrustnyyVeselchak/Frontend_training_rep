@@ -1,7 +1,7 @@
 import { React, useState} from "react";
 import axios from "axios";
 
-import { Alert, Snackbar } from "@mui/material";
+import { Alert, Snackbar, Grid } from "@mui/material";
 
 
 
@@ -65,28 +65,35 @@ export default function SumbitEmail(props) {
       );
     
     return(
-        <div>
+        <Grid container
+                direction="row"
+                justifyContent="space-between"
+                alignItems="center"
+                sx = {{color: 'white'}}
+        >
             <form onSubmit={handleSubmit}>
-                <input
-                    type="email"
-                    value={email}
-                    name="email"
-                    onChange={handleInput}
+                    <input
+                        type="email"
+                        value={email}
+                        name="email"
+                        onChange={handleInput}
                     /> 
-                <input
-                    type="submit"
-                    onClick={handleClick}/>
-                    <Snackbar 
-                        open={open} 
-                        autoHideDuration={3000} 
-                        anchorOrigin={{ vertical:'top', horizontal: 'left',  }}
-                        action={action}
-                        onClose={handleClose}
+                    
+                    <button 
+                        type="submit"
+                        onClick={handleClick}
+                    >
+                        Submit
+                    </button>
+                        <Snackbar 
+                            open={open} 
+                            autoHideDuration={3000} 
+                            anchorOrigin={{ vertical:'top', horizontal: 'left',  }}
+                            action={action}
+                            onClose={handleClose}
                         > 
-                    </Snackbar>
+                        </Snackbar>
             </form>
-        </div>
-
-        
+        </Grid>        
     )
 };

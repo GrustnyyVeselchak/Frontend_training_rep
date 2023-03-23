@@ -2,6 +2,7 @@ import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import {BrowserRouter} from "react-router-dom"
 import {HashLink as Link} from "react-router-hash-link"
+import SumbitEmail from "./SubmitEmail";
 
 
 export default function Header(props) {
@@ -45,9 +46,7 @@ export default function Header(props) {
                         </Grid>
                                                     
                         <Grid item>
-                            <Typography>
-                                Пользователь
-                            </Typography>
+                            <SumbitEmail/>
                         </Grid>
                     </Grid>
                 </BrowserRouter>

@@ -4,7 +4,6 @@ import Hello from "./Hello";
 import Personal from "./Personal";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
-import SumbitEmail from "./SubmitEmail";
 
 function App() {
 
@@ -15,7 +14,6 @@ function App() {
         <Hello/>
         <Personal/>
         <SearchBar/>
-        <SumbitEmail/>
       <MainWrapper/>
     </div>
   );
