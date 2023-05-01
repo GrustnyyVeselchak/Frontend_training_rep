@@ -53,19 +53,21 @@ export default function SearchBar(props) {
             <Table aria-label = 'simple table'sx = {{color: "white"}}>
               <TableHead>
                 <TableRow>
-                  <TableCell sx = {{color: "white"}}>Name</TableCell>
-                  <TableCell sx = {{color: "white"}}>year</TableCell>
-                  <TableCell align="center" sx = {{color: "white"}}>My rating</TableCell>
+                  <TableCell sx = {{color: "white"}}>word</TableCell>
+                  <TableCell sx = {{color: "white"}}>transcription</TableCell>
+                  <TableCell align="center" sx = {{color: "white"}}>translation</TableCell>
+                  <TableCell sx = {{color: "white"}}>explanation</TableCell>
                 </TableRow>
               </TableHead>
 
               <TableBody> 
                 {searchInfo.filter(film=>
-                film.name.includes(query)).map((film)=>(
-                  <TableRow key={film.name}>
-                    <TableCell sx = {{color: "white"}}>{film.name}</TableCell>
-                    <TableCell sx = {{color: "white"}}>{film.year}</TableCell>
-                    <TableCell align="center" sx = {{color: "white"}}>{film.my_rating}</TableCell>
+                film.word.includes(query)).map((film)=>(
+                  <TableRow key={film.word}>
+                    <TableCell sx = {{color: "white"}}>{film.word}</TableCell>
+                    <TableCell sx = {{color: "white"}}>{film.transcription}</TableCell>
+                    <TableCell sx = {{color: "white"}}>{film.translation}</TableCell>
+                    <TableCell sx = {{color: "white"}}>{film.explanation}</TableCell>
                   </TableRow>
                   ))}
               </TableBody>
